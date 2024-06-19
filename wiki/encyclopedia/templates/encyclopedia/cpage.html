@@ -1,0 +1,19 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+        
+    {% if data != None %}
+            <div class="linking">
+                <a href="{% url 'wiki:edit' name %}" class="btn btn-primary">Edit</a>
+            </div>
+        {{ data|safe }}
+    {% else %}
+        <h1>Page Not Found</h1>
+    {% endif %}
+    
+
+{% endblock %}
